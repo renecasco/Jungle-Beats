@@ -9,9 +9,9 @@ class LinkedListTest < Minitest::Test
     list = LinkedList.new
     assert_instance_of LinkedList, list
   end
-  
-  def tes_head_is_initialized_nil
+
+  def test_head_is_initialized_nil
     list = LinkedList.new
-    assert_nil List.head
+    assert_nil list.head
   end
 end
