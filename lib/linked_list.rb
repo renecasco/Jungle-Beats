@@ -87,4 +87,18 @@ class LinkedList
     end
     string.lstrip
   end
+
+  def includes?(value)
+    true if self.to_string.include?(value)
+  end
+
+  def pop
+    current_node = @head
+    while current_node.next_node.next_node
+      current_node = current_node.next_node
+    end
+    result = current_node.next_node.data
+    current_node.next_node = nil
+    result
+  end
 end
