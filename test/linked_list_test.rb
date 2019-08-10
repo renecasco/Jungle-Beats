@@ -35,6 +35,9 @@ class LinkedListTest < Minitest::Test
 
     list.append("doop")
     assert_equal 1, list.count
+
+    list.append("deep")
+    assert_equal 2, list.count
   end
 
   def test_it_returns_string_of_all_elements
