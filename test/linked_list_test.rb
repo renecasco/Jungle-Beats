@@ -27,6 +27,6 @@ class LinkedListTest < Minitest::Test
     list = LinkedList.new
     list.append("doop")
 
-    assert_equal 2, list.count
+    assert_equal 1, list.count
   end
 end
