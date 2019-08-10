@@ -41,4 +41,12 @@ class LinkedList
     string
   end
 
+  def prepend(data)
+    if @head
+      @head = Node.new(data, @head)
+    else
+      @head = Node.new(data)
+    end
+  end
+
 end
