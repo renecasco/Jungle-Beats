@@ -13,6 +13,7 @@ class LinkedList
   def tail
     current_node = @head
     current_node = current_node.next_node while current_node.next_node
+    current_node
   end
 
   def count
