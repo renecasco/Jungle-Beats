@@ -91,4 +91,29 @@ class LinkedListTest < Minitest::Test
     assert_equal "shi", list.find(2, 1)
     assert_equal "woo shi shu", list.find(1, 3)
   end
+
+  def test_it_returns_true_if_node_is_included
+    list = LinkedList.new
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    list.insert(0, "deep")
+
+    assert list.includes?("deep")
+    refute list.includes?("dep")
+  end
+
+  def test_it_pops_the_last_node
+    list = LinkedList.new
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    list.insert(0, "deep")
+
+    assert_equal "blop", list.pop
+    assert_equal "shu", list.pop
+    assert_equal "deep woo shi", list.to_string
+  end
 end
