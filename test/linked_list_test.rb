@@ -27,15 +27,17 @@ class LinkedListTest < Minitest::Test
 
   def test_it_counts_elements_in_list
     list = LinkedList.new
-    list.append("doop")
+    assert_equal 0, list.count
 
+    list.append("doop")
     assert_equal 1, list.count
   end
 
   def test_it_returns_string_of_all_elements
     list = LinkedList.new
-    list.append("doop")
+    assert_equal "", list.to_string
 
+    list.append("doop")
     assert_equal "doop", list.to_string
   end
 end

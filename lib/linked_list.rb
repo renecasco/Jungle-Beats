@@ -26,4 +26,9 @@ class LinkedList
     counter
   end
 
+  def to_string
+    return head.data if head
+    string = ""
+  end
+
 end
