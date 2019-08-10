@@ -13,6 +13,7 @@ class LinkedList
   def tail
     current_node = @head
     current_node = current_node.next_node while current_node.next_node
+    current_node
   end
 
   def count
@@ -27,8 +28,17 @@ class LinkedList
   end
 
   def to_string
-    return head.data if head
-    string = ""
+    if @head
+      string = head.data
+      current_node = @head
+      while current_node.next_node
+        string = "#{string} #{current_node.next_node.data}"
+        current_node = current_node.next_node
+      end
+    else
+      string = ""
+    end
+    string
   end
 
 end
