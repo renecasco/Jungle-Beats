@@ -77,4 +77,18 @@ class LinkedListTest < Minitest::Test
 
     assert_equal "dop woo plop deep suu", list.to_string
   end
+
+  def test_find_returns_required_nodes
+    list = LinkedList.new
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    list.insert(0, "deep")
+
+
+    assert_equal "deep woo shi shu blop", list.to_string
+    assert_equal "shi", list.find(2, 1)
+    assert_equal "woo shi shu", list.find(1, 3)
+  end
 end
