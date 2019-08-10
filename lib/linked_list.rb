@@ -49,4 +49,24 @@ class LinkedList
     end
   end
 
+  def insert(position, data)
+    count = 0
+    if position == count
+      prepend(data)
+    else
+      count = 1
+      current_node = @head
+      while current_node.next_node
+        check_and_place_node(position, count, current_node, data)
+        count += 1
+        current_node = current_node.next_node
+      end
+    end
+  end
+
+  def check_and_place_node(position, count, current_node, data)
+    if position == count
+      current_node.next_node = Node.new(data, current_node.next_node)
+    end
+  end
 end
